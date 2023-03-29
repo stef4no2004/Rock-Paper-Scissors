@@ -1,35 +1,40 @@
 function getComputerChoice(){
-    //create array of (rock, paper, scissors)
-    const listOfWeapons = new Array ('Rock','Paper','Scissors');
-    //make computer choose randomly between the objects of the array
+    const listOfWeapons = ['rock','paper','scissors'];
     let computerChoice = listOfWeapons[Math.floor(Math.random()*listOfWeapons.length)];
     return computerChoice
 }
-getComputerChoice();
-//Create function that starts a round
-function playRound(playerSelection, computerSelection) {
-    let getPlayerSelection = prompt('Choose your weapon!');
+//This function gets the computer to choose randomly between the three elements of the game
+function playRound() {
+    let playerSelection = prompt('Choose your weapon!').toLowerCase();
     const computerChoice = getComputerChoice()
-    if (computerChoice == getPlayerSelection) {
+    if (computerChoice == playerSelection) {
       alert('It\'s a tie you both have choosen the same weapon')
     }
-    if (computerChoice == 'Rock' && getPlayerSelection == 'Paper') {
+    if (computerChoice == 'rock' && playerSelection == 'paper') {
       alert('You won paper beats rock')
     }
-    if (computerChoice == 'Rock' && getPlayerSelection == 'Scissors') {
+    if (computerChoice == 'rock' && playerSelection == 'scissors') {
       alert('You lost rock beats scissors')
     }
-    if (computerChoice == 'Paper' && getPlayerSelection == 'Scissors') {
+    if (computerChoice == 'paper' && playerSelection == 'scissors') {
       alert('You won scissors beats paper')
     }
-    if (computerChoice == 'Paper' && getPlayerSelection == 'Rock') {
+    if (computerChoice == 'paper' && playerSelection == 'rock') {
       alert('You lost paper beats rock')
     }
-    if (computerChoice == 'Scissors' && getPlayerSelection == 'Rock') {
+    if (computerChoice == 'scissors' && playerSelection == 'rock') {
       alert('You won rock beats paper')
     }
-    if (computerChoice == 'Scissors' && getPlayerSelection == 'Paper') {
+    if (computerChoice == 'scissors' && playerSelection == 'paper') {
       alert('You lost scissors beats paper')
     }
+    if (playerSelection != 'rock' && playerSelection != 'scissors' && playerSelection !=  'paper') {
+      alert('This is not a valid weapon!')
+    }
   }
+  //This function defines the relationship between the three elements of the game
+  playRound();
+  playRound();
+  playRound();
+  playRound();
   playRound();
